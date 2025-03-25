@@ -17,11 +17,7 @@ function Cform() {
       const handleSubmit = (event) => {
         event.preventDefault();
         setsm("Thank You !!!");
-        const resp=axios.post('http://localhost:8000/contacts', inputs);
-        if(resp.status===200)
-            console.log("Queries Saved");
-        else
-            console.log("Data Missing");
+        const resp=axios.post(`${process.env.REACT_APP_SERVERHOST}/contacts`, inputs);
       }
 
     return (

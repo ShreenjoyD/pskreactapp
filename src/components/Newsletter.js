@@ -8,11 +8,7 @@ function Newsletter() {
 
     const handlesub=(e)=>{
         e.preventDefault();
-        const resp = axios.post('http://localhost:8000/subscribd', { news });
-        if (resp.status === 200)
-            console.log("Email sent Successfully");
-        else
-            console.log("Email Blocked");
+        const resp = axios.post(`${process.env.REACT_APP_SERVERHOST}/subscribd`, { news });
     }
 
     return (
